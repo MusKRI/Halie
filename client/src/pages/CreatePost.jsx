@@ -23,7 +23,7 @@ const CreatePost = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://halie-server.onrender.com/api/v1/post",
+          "http://halie-server.onrender.com/api/v1/post",
           {
             method: "POST",
             headers: {
@@ -60,7 +60,7 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
         const response = await fetch(
-          "https://halie-server.onrender.com/api/v1/dalle",
+          "http://halie-server.onrender.com/api/v1/dalle",
           {
             method: "POST",
             headers: {

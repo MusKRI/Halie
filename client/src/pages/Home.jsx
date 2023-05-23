@@ -21,10 +21,10 @@ const Home = () => {
 
   const fetchPosts = async () => {
     setLoading(true);
-
+    // http://halie-server.onrender.com/api/v1/post",
     try {
       const response = await fetch(
-        "https://halie-server.onrender.com/api/v1/post",
+        "http://halie-server.onrender.com/api/v1/post",
         {
           method: "GET",
           headers: {
@@ -104,7 +104,10 @@ const Home = () => {
 
             <div className="grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3">
               {searchText ? (
-                <RenderCards data={[]} title="No search results found" />
+                <RenderCards
+                  data={searchedResults}
+                  title="No search results found"
+                />
               ) : (
                 <RenderCards data={allPosts} title="No posts found" />
               )}
